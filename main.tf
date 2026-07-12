@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.subnets : {
       for k2, v2 in coalesce(v1.subnet_nat_gateway_associations, {}) :
       "${k1}/${k2}" => merge(v2, {
-        subnet_id = module.subnets.subnets["${k1}"].id
+        subnet_id = module.subnets.subnets_id["${k1}"]
       })
     }
   ]...)
@@ -14,7 +14,7 @@ locals {
     for k1, v1 in var.subnets : {
       for k2, v2 in coalesce(v1.subnet_network_security_group_associations, {}) :
       "${k1}/${k2}" => merge(v2, {
-        subnet_id = module.subnets.subnets["${k1}"].id
+        subnet_id = module.subnets.subnets_id["${k1}"]
       })
     }
   ]...)
@@ -23,7 +23,7 @@ locals {
     for k1, v1 in var.subnets : {
       for k2, v2 in coalesce(v1.subnet_route_table_associations, {}) :
       "${k1}/${k2}" => merge(v2, {
-        subnet_id = module.subnets.subnets["${k1}"].id
+        subnet_id = module.subnets.subnets_id["${k1}"]
       })
     }
   ]...)
