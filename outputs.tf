@@ -1,4 +1,9 @@
 # --- azurerm_subnet ---
+output "subnets_id" {
+  description = "Map of id values across all subnets, keyed the same as var.subnets"
+  value       = module.subnets.subnets_id
+}
+
 output "subnets_address_prefixes" {
   description = "Map of address_prefixes values across all subnets, keyed the same as var.subnets"
   value       = module.subnets.subnets_address_prefixes
@@ -60,6 +65,11 @@ output "subnets_virtual_network_name" {
 }
 
 # --- azurerm_subnet_nat_gateway_association ---
+output "subnet_nat_gateway_associations_id" {
+  description = "Map of id values across all subnet_nat_gateway_associations, keyed the same as var.subnet_nat_gateway_associations"
+  value       = module.subnet_nat_gateway_associations.subnet_nat_gateway_associations_id
+}
+
 output "subnet_nat_gateway_associations_nat_gateway_id" {
   description = "Map of nat_gateway_id values across all subnet_nat_gateway_associations, keyed the same as var.subnet_nat_gateway_associations"
   value       = module.subnet_nat_gateway_associations.subnet_nat_gateway_associations_nat_gateway_id
@@ -71,6 +81,11 @@ output "subnet_nat_gateway_associations_subnet_id" {
 }
 
 # --- azurerm_subnet_network_security_group_association ---
+output "subnet_network_security_group_associations_id" {
+  description = "Map of id values across all subnet_network_security_group_associations, keyed the same as var.subnet_network_security_group_associations"
+  value       = module.subnet_network_security_group_associations.subnet_network_security_group_associations_id
+}
+
 output "subnet_network_security_group_associations_network_security_group_id" {
   description = "Map of network_security_group_id values across all subnet_network_security_group_associations, keyed the same as var.subnet_network_security_group_associations"
   value       = module.subnet_network_security_group_associations.subnet_network_security_group_associations_network_security_group_id
@@ -82,6 +97,11 @@ output "subnet_network_security_group_associations_subnet_id" {
 }
 
 # --- azurerm_subnet_route_table_association ---
+output "subnet_route_table_associations_id" {
+  description = "Map of id values across all subnet_route_table_associations, keyed the same as var.subnet_route_table_associations"
+  value       = module.subnet_route_table_associations.subnet_route_table_associations_id
+}
+
 output "subnet_route_table_associations_route_table_id" {
   description = "Map of route_table_id values across all subnet_route_table_associations, keyed the same as var.subnet_route_table_associations"
   value       = module.subnet_route_table_associations.subnet_route_table_associations_route_table_id
