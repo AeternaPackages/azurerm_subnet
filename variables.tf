@@ -37,13 +37,13 @@ EOT
     service_endpoint_policy_ids                   = optional(set(string))
     service_endpoints                             = optional(set(string))
     sharing_scope                                 = optional(string)
-    delegation = optional(object({
+    delegation = optional(list(object({
       name = string
       service_delegation = object({
         actions = optional(set(string))
         name    = string
       })
-    }))
+    })))
     ip_address_pool = optional(object({
       id                     = string
       number_of_ip_addresses = string
