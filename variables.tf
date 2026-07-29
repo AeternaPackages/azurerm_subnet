@@ -8,13 +8,17 @@ Required:
 Optional:
     - address_prefixes
     - default_outbound_access_enabled
+    - network_security_group_id_wo
+    - network_security_group_id_wo_version
     - private_endpoint_network_policies
     - private_link_service_network_policies_enabled
+    - route_table_id_wo
+    - route_table_id_wo_version
     - service_endpoint_policy_ids
-    - service_endpoints
     - sharing_scope
     - delegation (block)
     - ip_address_pool (block)
+    - service_endpoint (block)
 Nested subnet_nat_gateway_associations (azurerm_subnet_nat_gateway_association):
     Required:
         - nat_gateway_id
@@ -32,10 +36,13 @@ EOT
     virtual_network_name                          = string
     address_prefixes                              = optional(list(string))
     default_outbound_access_enabled               = optional(bool)
+    network_security_group_id_wo                  = optional(string)
+    network_security_group_id_wo_version          = optional(number)
     private_endpoint_network_policies             = optional(string)
     private_link_service_network_policies_enabled = optional(bool)
+    route_table_id_wo                             = optional(string)
+    route_table_id_wo_version                     = optional(number)
     service_endpoint_policy_ids                   = optional(set(string))
-    service_endpoints                             = optional(set(string))
     sharing_scope                                 = optional(string)
     delegation = optional(list(object({
       name = string
@@ -48,6 +55,10 @@ EOT
       id                     = string
       number_of_ip_addresses = string
     }))
+    service_endpoint = optional(list(object({
+      network_identifier = optional(string)
+      service            = string
+    })))
     subnet_nat_gateway_associations = optional(map(object({
       nat_gateway_id = string
     })))

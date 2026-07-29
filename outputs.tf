@@ -29,6 +29,21 @@ output "subnets_name" {
   value       = module.subnets.subnets_name
 }
 
+output "subnets_network_security_group_id" {
+  description = "Map of network_security_group_id values across all subnets, keyed the same as var.subnets"
+  value       = module.subnets.subnets_network_security_group_id
+}
+
+output "subnets_network_security_group_id_wo" {
+  description = "Map of network_security_group_id_wo values across all subnets, keyed the same as var.subnets"
+  value       = module.subnets.subnets_network_security_group_id_wo
+}
+
+output "subnets_network_security_group_id_wo_version" {
+  description = "Map of network_security_group_id_wo_version values across all subnets, keyed the same as var.subnets"
+  value       = module.subnets.subnets_network_security_group_id_wo_version
+}
+
 output "subnets_private_endpoint_network_policies" {
   description = "Map of private_endpoint_network_policies values across all subnets, keyed the same as var.subnets"
   value       = module.subnets.subnets_private_endpoint_network_policies
@@ -44,14 +59,29 @@ output "subnets_resource_group_name" {
   value       = module.subnets.subnets_resource_group_name
 }
 
+output "subnets_route_table_id" {
+  description = "Map of route_table_id values across all subnets, keyed the same as var.subnets"
+  value       = module.subnets.subnets_route_table_id
+}
+
+output "subnets_route_table_id_wo" {
+  description = "Map of route_table_id_wo values across all subnets, keyed the same as var.subnets"
+  value       = module.subnets.subnets_route_table_id_wo
+}
+
+output "subnets_route_table_id_wo_version" {
+  description = "Map of route_table_id_wo_version values across all subnets, keyed the same as var.subnets"
+  value       = module.subnets.subnets_route_table_id_wo_version
+}
+
+output "subnets_service_endpoint" {
+  description = "Map of service_endpoint values across all subnets, keyed the same as var.subnets"
+  value       = module.subnets.subnets_service_endpoint
+}
+
 output "subnets_service_endpoint_policy_ids" {
   description = "Map of service_endpoint_policy_ids values across all subnets, keyed the same as var.subnets"
   value       = module.subnets.subnets_service_endpoint_policy_ids
-}
-
-output "subnets_service_endpoints" {
-  description = "Map of service_endpoints values across all subnets, keyed the same as var.subnets"
-  value       = module.subnets.subnets_service_endpoints
 }
 
 output "subnets_sharing_scope" {
