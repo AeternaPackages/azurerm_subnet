@@ -30,24 +30,24 @@ locals {
 }
 
 module "subnets" {
-  source  = "git::https://github.com/AeternaModules/azurerm_subnet.git?ref=v5.0.0"
+  source  = "git::https://github.com/AeternaModules/azurerm_subnet.git?ref=v5.0.1"
   subnets = local.subnets
 }
 
 module "subnet_nat_gateway_associations" {
-  source                          = "git::https://github.com/AeternaModules/azurerm_subnet_nat_gateway_association.git?ref=v5.0.0"
+  source                          = "git::https://github.com/AeternaModules/azurerm_subnet_nat_gateway_association.git?ref=v5.0.1"
   subnet_nat_gateway_associations = local.subnet_nat_gateway_associations
   depends_on                      = [module.subnets]
 }
 
 module "subnet_network_security_group_associations" {
-  source                                     = "git::https://github.com/AeternaModules/azurerm_subnet_network_security_group_association.git?ref=v5.0.0"
+  source                                     = "git::https://github.com/AeternaModules/azurerm_subnet_network_security_group_association.git?ref=v5.0.1"
   subnet_network_security_group_associations = local.subnet_network_security_group_associations
   depends_on                                 = [module.subnets]
 }
 
 module "subnet_route_table_associations" {
-  source                          = "git::https://github.com/AeternaModules/azurerm_subnet_route_table_association.git?ref=v5.0.0"
+  source                          = "git::https://github.com/AeternaModules/azurerm_subnet_route_table_association.git?ref=v5.0.1"
   subnet_route_table_associations = local.subnet_route_table_associations
   depends_on                      = [module.subnets]
 }
